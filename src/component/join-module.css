@@ -1,0 +1,135 @@
+.join {
+  display: flex;
+  padding: var(--Section-Padding-padding-section-large, 112px)
+    var(--Page-Padding-padding-global, 64px);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  align-self: stretch;
+}
+.joininf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  align-self: stretch;
+}
+.buttonjoin {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.butj01 {
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid #6f4e37;
+  background: #6f4e37;
+  color: var(--Color-White, #fff);
+
+  /* Text/Regular/Medium */
+  font-size: var(--Text-Sizes-Text-Regular, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+}
+.butj02 {
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--Opacity-Neutral-Darkest-15, rgba(5, 9, 6, 0.15));
+  color: var(--Color-Neutral-Darkest, #050906);
+  background-color: transparent;
+  /* Text/Regular/Medium */
+  font-size: var(--Text-Sizes-Text-Regular, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+}
+.join {
+  display: flex;
+  padding: 112px 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  align-self: stretch;
+
+  /* حالة البداية */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* عند الدخول */
+.join.animate {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* العناصر الداخلية */
+.join > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.join.animate > *:nth-child(1) {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.join.animate > *:nth-child(2) {
+  animation: fadeUp 0.6s ease 0.3s forwards;
+}
+
+/* المحتوى */
+.joininf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.buttonjoin {
+  display: flex;
+  gap: 16px;
+}
+
+.joinimg {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* الأزرار */
+.butj01 {
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 1px solid #6f4e37;
+  background: #6f4e37;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.butj02 {
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(5, 9, 6, 0.15);
+  background: transparent;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

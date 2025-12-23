@@ -1,0 +1,39 @@
+.conelement021 {
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  align-self: stretch;
+  border-radius: var(--Radius-Large, 8px);
+  border: var(--Stroke-Border-Width, 1px) solid
+    var(--Color-Scheme-1-Border, rgba(5, 9, 6, 0.15));
+  background: #fff;
+}
+.stanumb01 {
+  color: #6f4e37;
+
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 104px */
+}
+.stanumb02 {
+  color: var(--Color-Scheme-1-Text, #050906);
+
+  /* Heading/H6 */
+  font-size: var(--Text-Sizes-Heading-6, 26px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 36.4px */
+  letter-spacing: -0.26px;
+}
+.stanumb03 {
+  color: var(--Color-Scheme-1-Text, #050906);
+
+  /* Text/Regular/Normal */
+  font-size: var(--Text-Sizes-Text-Regular, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}

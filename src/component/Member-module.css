@@ -1,0 +1,138 @@
+.member {
+  display: flex;
+  padding: var(--Section-Padding-padding-section-large, 112px)
+    var(--Page-Padding-padding-global, 64px);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  align-self: stretch;
+  font-family: "Inter", sans-serif;
+}
+.membercontent {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  align-self: stretch;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.membercadre {
+  display: flex;
+  height: 335px;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+  border-radius: var(--Radius-Medium, 8px);
+  border: var(--Stroke-Border-Width, 1px) solid
+    var(--Color-Scheme-1-Border, rgba(5, 9, 6, 0.15));
+  background: var(--Color-Scheme-1-Foreground, #f2f2f2);
+}
+.metext {
+  color: var(--Color-Scheme-1-Text, #050906);
+
+  /* Text/Medium/Normal */
+  font-size: var(--Text-Sizes-Text-Medium, 20px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+}
+.etoil {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+.slimani {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+.profil {
+  width: 48px;
+  height: 48px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #c6c6c6;
+}
+.infmemeber {
+  display: flex;
+  flex-direction: column;
+}
+.mename {
+  color: var(--Color-Scheme-1-Text, #050906);
+
+  /* Text/Regular/Semi Bold */
+  font-size: var(--Text-Sizes-Text-Regular, 18px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 27px */
+}
+.memember {
+  color: var(--Color-Scheme-1-Text, #050906);
+
+  /* Text/Regular/Normal */
+  font-size: var(--Text-Sizes-Text-Regular, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+.member {
+  display: flex;
+  padding: 112px 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  align-self: stretch;
+  font-family: "Inter", sans-serif;
+
+  /* قبل الظهور */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* عند الدخول */
+.member.animate {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* العناصر الداخلية */
+.member > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.member.animate > *:nth-child(1) {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.member.animate > *:nth-child(2) {
+  animation: fadeUp 0.5s ease 0.2s forwards;
+}
+
+/* كروت الأعضاء */
+/* .member.animate .membercadre {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.member.animate .membercadre:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.member.animate .membercadre:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.member.animate .membercadre:nth-child(3) {
+  animation-delay: 0.6s;
+} */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

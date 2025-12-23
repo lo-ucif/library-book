@@ -1,0 +1,83 @@
+.doublebut {
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  /* margin-top: 32px; */
+  font-family: "Inter", sans-serif;
+}
+.butdouble001 {
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid #050906;
+  background-color: transparent;
+}
+.butdouble002 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 0;
+  background-color: transparent;
+}
+.doublebut {
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  font-family: "Inter", sans-serif;
+
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* عند الدخول */
+.doublebut.animate {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* الأزرار بتدرج */
+.doublebut > button {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.doublebut.animate > button:nth-child(1) {
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.doublebut.animate > button:nth-child(2) {
+  animation: fadeUp 0.4s ease 0.2s forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ستايلك الحالي */
+.butdouble001 {
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 1px solid #050906;
+  background-color: transparent;
+}
+
+.butdouble002 {
+  border-radius: 6px;
+  border: 0;
+  background-color: transparent;
+}

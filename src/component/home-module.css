@@ -1,0 +1,352 @@
+@import "animate.css";
+.home {
+  display: flex;
+  /* height: 640px; */
+  /* padding: 0 64px; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 1280px; */
+  padding: var(--Section-Padding-padding-section-large, 112px)
+    var(--Page-Padding-padding-global, 64px);
+
+  gap: 80px;
+  align-self: stretch;
+  border-radius: var(--Radius-Large, 8px);
+  position: "relative";
+  /* display: "inline-block"; */
+  padding-top: 10px;
+}
+.img01 {
+  height: 640px;
+  width: 1280px;
+  filter: brightness(50%);
+  border-radius: var(--Radius-Large, 8px);
+}
+.cadretexthome {
+  position: absolute;
+  display: flex;
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  text-align: center;
+}
+.texthome01 {
+  color: var(--Color-White, #fff);
+  text-align: center;
+
+  /* Heading/H1 */
+  font-family: "Inter", sans-serif;
+  font-size: var(--Text-Sizes-Heading-1, 84px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 92.4px */
+  letter-spacing: -0.84px;
+}
+
+.box {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.texthome02 {
+  color: var(--Color-White, #fff);
+  text-align: center;
+
+  /* Text/Medium/Normal */
+  font-family: "Inter", sans-serif;
+  font-size: var(--Text-Sizes-Text-Medium, 20px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+}
+.buttoncadrehome {
+  display: flex;
+  gap: 16px;
+}
+.buttonhome01 {
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--Color-White, #fff);
+  background: var(--Color-White, #fff);
+  color: var(--Color-Neutral-Darkest, #050906);
+
+  /* Text/Regular/Medium */
+  font-family: "Inter", sans-serif;
+  font-size: var(--Text-Sizes-Text-Regular, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+}
+.buttonhome02 {
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--Opacity-White-20, rgba(255, 255, 255, 0.2));
+  color: var(--Color-White, #fff);
+
+  /* Text/Regular/Medium */
+  font-family: "Inter", sans-serif;
+  font-size: var(--Text-Sizes-Text-Regular, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  background-color: transparent;
+}
+
+@keyframes heroImage {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.img01 {
+  animation-name: heroImage;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes titleAnim {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.texthome01 {
+  animation-name: titleAnim;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes textFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.texthome02 {
+  animation-name: textFade;
+  animation-duration: 1s;
+  animation-delay: 0.9s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes buttonUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buttonhome01 {
+  animation: buttonUp 0.4s ease 0.6s forwards;
+  opacity: 0;
+}
+
+.buttonhome02 {
+  animation: buttonUp 0.4s ease 0.9s forwards;
+  opacity: 0;
+}
+.img01,
+.texthome01,
+.texthome02,
+.buttonhome01,
+.buttonhome02 {
+  opacity: 0;
+}
+.home.animate .img01 {
+  animation: heroImage 1.5s forwards;
+}
+
+@keyframes heroImage {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.home.animate .texthome01 {
+  animation: titleAnim 1s 0.4s forwards;
+}
+
+@keyframes titleAnim {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.home.animate .texthome02 {
+  animation: textFade 1s 0.8s forwards;
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.home.animate .buttonhome01 {
+  animation: buttonUp 0.4s 1s forwards;
+}
+
+.home.animate .buttonhome02 {
+  animation: buttonUp 0.4s 1.2s forwards;
+}
+
+@keyframes buttonUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .home {
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+  }
+
+  .img01 {
+    width: 100%;
+    height: 100%; /* تصغير الصورة لتتناسب مع الهاتف */
+    border-radius: 8px;
+  }
+
+  .cadretexthome {
+    max-width: 90%; /* لتتناسب مع عرض الهاتف */
+    gap: 16px;
+  }
+
+  .texthome01 {
+    color: var(--Color-White, #fff);
+    text-align: center;
+
+    /* Heading/H1 */
+    font-size: var(--Text-Sizes-Heading-1, 32px);
+    font-style: normal;
+    font-weight: 500;
+    width: 60%;
+    line-height: 110%; /* 52.8px */
+    letter-spacing: -0.48px;
+  }
+
+  .texthome02 {
+    color: var(--Color-White, #fff);
+    text-align: center;
+
+    /* Text/Regular/Normal */
+    font-size: var(--Text-Sizes-Text-Regular, 14px);
+    font-style: normal;
+    font-weight: 400;
+    width: 60%;
+    line-height: 150%; /* 21px */
+  }
+
+  .buttoncadrehome {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .buttonhome01,
+  .buttonhome02 {
+    display: flex;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--Color-White, #fff);
+    background: var(--Color-White, #fff);
+  }
+  .buttonhome02 {
+    background-color: transparent;
+  }
+}
+/* ===== Tablet Mode ===== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .home {
+    padding: 80px 40px; /* تقليل padding للتابلت */
+    gap: 60px;
+  }
+
+  .img01 {
+    width: 100%;
+    height: auto; /* ارتفاع متناسب */
+    border-radius: 8px;
+  }
+
+  .cadretexthome {
+    max-width: 80%; /* مناسب للتابلت */
+    gap: 24px;
+  }
+
+  .texthome01 {
+    font-size: 56px; /* تصغير العنوان */
+    line-height: 64px;
+    width: 70%;
+    letter-spacing: -0.5px;
+  }
+
+  .texthome02 {
+    font-size: 18px; /* تصغير الوصف */
+    line-height: 26px;
+    width: 70%;
+  }
+
+  .buttoncadrehome {
+    flex-direction: row; /* الأزرار بجانب بعض */
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttonhome01,
+  .buttonhome02 {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}

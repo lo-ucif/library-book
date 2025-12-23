@@ -1,0 +1,113 @@
+.eventcardflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  /* align-self: stretch; */
+  flex-wrap: wrap;
+}
+.eventcss {
+  display: flex;
+  max-width: var(--Container-container-large, 1280px);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  /* align-self: stretch; */
+}
+.butviewall {
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--Opacity-Neutral-Darkest-15, rgba(5, 9, 6, 0.15));
+  color: var(--Color-Neutral-Darkest, #050906);
+
+  /* Text/Regular/Medium */
+  font-size: var(--Text-Sizes-Text-Regular, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  background-color: transparent;
+}
+.eventcss {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.eventcss.animate {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* العناصر الداخلية بتدرج */
+.eventcss > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.eventcss.animate > *:nth-child(1) {
+  animation: fadeUp 0.5s ease forwards;
+}
+.eventcss.animate > *:nth-child(2) {
+  animation: fadeUp 0.5s ease 0.2s forwards;
+}
+.eventcss.animate > *:nth-child(3) {
+  animation: fadeUp 0.5s ease 0.4s forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== Tablet Mode ===== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .eventcss {
+    display: flex;
+    max-width: var(--Container-container-large, 1280px);
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    align-self: stretch;
+  }
+
+  .eventcardflex {
+    gap: 20px; /* تقليل المسافة بين الكروت */
+    justify-content: center;
+  }
+
+  .butviewall {
+    padding: 8px 20px;
+    font-size: 16px;
+  }
+}
+
+/* ===== Phone Mode ===== */
+@media (max-width: 768px) {
+  .eventcss {
+    display: flex;
+    max-width: var(--Container-container-large, 1280px);
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    align-self: stretch;
+  }
+
+  .eventcardflex {
+    gap: 16px; /* تقليل المسافة بين الكروت */
+    flex-direction: column; /* ترتيب عمودي */
+    align-items: center;
+  }
+
+  .butviewall {
+    padding: 8px 16px;
+    font-size: 14px;
+    width: 100%; /* الأزرار بعرض كامل */
+  }
+}
