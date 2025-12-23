@@ -1,5 +1,5 @@
 import Aetwal from "./Aetwal";
-import "./amember-module.css";
+
 
 export default function Amember(params) {
   return (
