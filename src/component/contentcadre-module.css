@@ -57,7 +57,7 @@
   font-weight: 400;
   line-height: 150%; /* 27px */
 }
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .cadrepresent {
     flex-direction: column;
     gap: 16px;
@@ -65,7 +65,8 @@
   }
 
   .place {
-    width: 100%;
+    align-self: center;
+    width: 80%;
     height: 320px; /* تقليل الارتفاع في الهاتف */
   }
 

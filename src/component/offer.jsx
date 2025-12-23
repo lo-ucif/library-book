@@ -28,7 +28,7 @@ export default function Offer() {
   }, []);
 
   return (
-    <div>
+    <div className="offer">
       <Atitle
         text01="Explore"
         text02="What we offer"

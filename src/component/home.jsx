@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./home-module.css";
-import img01 from "../img/d8775f4f77434791df0c872dbbe85f50258ce5fa.jpg";
+import img01 from "../img/home page.jpg";
 
 export default function Home() {
   const homeRef = useRef(null);
@@ -24,16 +24,18 @@ export default function Home() {
 
   return (
     <div ref={homeRef} className="home">
-      <img className="img01" src={img01} alt="" />
+      <div className="homecadre">
+        <img className="img01" src={img01} alt="" />
 
-      <div className="cadretexthome">
-        <div className="texthome01">Discover your next favorite book</div>
-        <div className="texthome02">
-          Explore thousands of books, events, and resources available for you.
-        </div>
-        <div className="buttoncadrehome">
-          <button className="buttonhome01">Browse</button>
-          <button className="buttonhome02">Learn</button>
+        <div className="cadretexthome">
+          <div className="texthome01">Discover your next favorite book</div>
+          <div className="texthome02">
+            Explore thousands of books, events, and resources available for you.
+          </div>
+          <div className="buttoncadrehome">
+            <button className="buttonhome01">Browse</button>
+            <button className="buttonhome02">Learn</button>
+          </div>
         </div>
       </div>
     </div>

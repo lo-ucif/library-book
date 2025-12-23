@@ -10,7 +10,7 @@
   background: var(--Color-Scheme-1-Foreground, #f2f2f2);
 }
 .eventphoto {
-  height: 270px;
+  /* height: 270px; */
   position: relative;
   align-self: stretch;
   aspect-ratio: 405.33/270;
@@ -111,4 +111,18 @@
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
+}
+@media (max-width: 700px) {
+  .eventcard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    padding: 0;
+    width: 100%;
+    border-radius: var(--Radius-Medium, 8px);
+    border: var(--Stroke-Border-Width, 1px) solid
+      var(--Color-Scheme-1-Border, rgba(5, 9, 6, 0.15));
+  }
+  
 }

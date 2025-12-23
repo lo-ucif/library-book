@@ -1,5 +1,4 @@
 import "./aevntcard-module.css";
-import React from "react";
 
 export default function Aevntcard(params) {
   return (

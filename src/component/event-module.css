@@ -89,7 +89,7 @@
 }
 
 /* ===== Phone Mode ===== */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .eventcss {
     display: flex;
     max-width: var(--Container-container-large, 1280px);
@@ -97,17 +97,20 @@
     align-items: center;
     gap: 48px;
     align-self: stretch;
+    padding: 20px;
   }
 
   .eventcardflex {
-    gap: 16px; /* تقليل المسافة بين الكروت */
-    flex-direction: column; /* ترتيب عمودي */
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    align-self: stretch;
   }
 
   .butviewall {
     padding: 8px 16px;
     font-size: 14px;
-    width: 100%; /* الأزرار بعرض كامل */
+    width: 60%; 
   }
 }
