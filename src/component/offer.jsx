@@ -15,9 +15,9 @@ export default function Offer() {
         if (entry.isIntersecting) {
           entry.target.classList.add("animate");
         } 
-        else {
-          entry.target.classList.remove("animate"); // 👈 reset
-        }
+        // else {
+        //   entry.target.classList.remove("animate");
+        // }
       },
       { threshold: 0.2 }
     );
