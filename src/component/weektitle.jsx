@@ -48,7 +48,7 @@ export default function Weektitle() {
           entry.target.classList.add("animate");
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (weekRef.current) observer.observe(weekRef.current);

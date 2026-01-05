@@ -50,7 +50,7 @@ export default function Borrowbook() {
         //   entry.target.classList.remove("animate"); // 🔁 reset
         // }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (borrowRef.current) observer.observe(borrowRef.current);

@@ -16,7 +16,7 @@ export default function Member() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (memberRef.current) observer.observe(memberRef.current);

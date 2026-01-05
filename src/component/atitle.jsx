@@ -13,7 +13,7 @@ export default function Atitle(props) {
           entry.target.classList.remove("animate"); // 👈 reset animation
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (titleRef.current) observer.observe(titleRef.current);

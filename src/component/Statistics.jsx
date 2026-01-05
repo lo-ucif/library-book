@@ -15,7 +15,7 @@ export default function Statistics() {
           observer.unobserve(entry.target); // ✅ مرة واحدة فقط
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (statsRef.current) observer.observe(statsRef.current);

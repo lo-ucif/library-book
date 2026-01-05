@@ -12,7 +12,7 @@ export default function Loop() {
           obs.unobserve(entry.target); // 🔒 مرة واحدة فقط
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (loopRef.current) observer.observe(loopRef.current);

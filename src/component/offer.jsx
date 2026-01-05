@@ -19,7 +19,7 @@ export default function Offer() {
         //   entry.target.classList.remove("animate");
         // }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (offerRef.current) observer.observe(offerRef.current);

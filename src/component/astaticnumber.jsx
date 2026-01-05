@@ -27,7 +27,7 @@ export default function Astaticnumber({ target, label, desc }) {
           }, 16);
         }
       },
-      { threshold: 0.6 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) observer.observe(ref.current);

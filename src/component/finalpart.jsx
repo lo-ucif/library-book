@@ -12,7 +12,7 @@ export default function Finalpart() {
           entry.target.classList.add("show");
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (finalRef.current) {

@@ -13,7 +13,7 @@ export default function Adoublebutton(props) {
           entry.target.classList.remove("animate"); // 🔁 reset
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (btnRef.current) observer.observe(btnRef.current);
