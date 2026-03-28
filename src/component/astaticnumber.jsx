@@ -1,45 +1,59 @@
-import { useEffect, useRef, useState } from "react";
-import "./astaticnumber-module.css";
+import { useEffect, useState, useRef } from "react";
 
-export default function Astaticnumber({ target, label, desc }) {
+export default function Astaticnumber(props) {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const started = useRef(false);
+  const countRef = useRef(null);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-
-          let start = 0;
-          const duration = 1500;
-          const increment = target / (duration / 16);
-
-          const counter = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-              setCount(target);
-              clearInterval(counter);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
+        if (entry.isIntersecting) {
+          setHasStarted(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    if (countRef.current) observer.observe(countRef.current);
     return () => observer.disconnect();
-  }, [target]);
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    const match = props.num.match(/(\d+)/);
+    if (!match) return;
+
+    const target = parseInt(match[1], 10);
+
+    let startTimestamp = null;
+    const duration = 2000;
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [hasStarted, props.num]);
+
+  const suffix = props.num.replace(/\d+/, "");
+  const displayNum = hasStarted ? `${count}${suffix}` : `0${suffix}`;
 
   return (
-    <div ref={ref} className="conelement021">
-      <div className="stanumb01">{count.toLocaleString()}+</div>
-      <div>
-        <div className="stanumb02">{label}</div>
-        <div className="stanumb03">{desc}</div>
+    <div ref={countRef} className="flex p-8 flex-col items-start gap-8 self-stretch rounded-brand-large border border-brand-dark/15 bg-[#f2f2f2] sm:self-center sm:w-full">
+      <div className="text-brand-brown text-[80px] sm:text-[56px] font-bold leading-[130%]">
+        {displayNum}
+      </div>
+      <div className="text-brand-dark font-sans text-[26px] sm:text-[18px] font-medium leading-[140%] tracking-[-0.26px] sm:tracking-[-0.18px]">
+        {props.title}
+      </div>
+      <div className="text-brand-dark font-sans text-text-regular sm:text-sm font-normal leading-[150%] sm:leading-[21px]">
+        {props.desc}
       </div>
     </div>
   );

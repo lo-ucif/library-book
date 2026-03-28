@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Amember from "./amember";
 import Atitle from "./atitle";
-import "./Member-module.css";
 
 export default function Member() {
   const memberRef = useRef(null);
@@ -12,7 +11,7 @@ export default function Member() {
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           entry.target.classList.add("animate");
-          setHasAnimated(true); // 🔒 يمنع التكرار
+          setHasAnimated(true);
           observer.unobserve(entry.target);
         }
       },
@@ -24,13 +23,13 @@ export default function Member() {
   }, [hasAnimated]);
 
   return (
-    <div ref={memberRef} className="member">
+    <div ref={memberRef} className="flex flex-col items-center py-[112px] px-16 sm:px-5 gap-20 self-stretch font-sans group opacity-0 group-[.animate]:animate-fadeUp">
       <Atitle
         text02="Member voices"
         text03="Hear what our readers have to say about their library experience."
       />
 
-      <div className="membercontent">
+      <div className="flex items-start gap-8 self-stretch flex-wrap justify-between opacity-0 group-[.animate]:animate-fadeUp [animation-delay:0.2s]">
         <Amember
           metext="This library changed how I read. The staff knows books like no one else, and they always point me toward something I didn't know I needed."
           mename="Mohamed Marmoush"

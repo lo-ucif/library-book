@@ -1,11 +1,10 @@
-import "./acadre01.css";
 export default function Acadre01(params) {
   return (
-    <div className="cadreoffer">
-      <img className="imgpffer01" src={params.photo} />
-      <div className="minoffer">
+    <div className="relative flex justify-center gap-6 self-stretch rounded-brand-large sm:p-6 sm:flex-col sm:items-start sm:gap-5 sm:w-[335px] sm:h-[350px]">
+      <img className="w-[405px] h-[309px] sm:w-full sm:h-[80%] object-cover rounded-brand-large brightness-[70%]" src={params.photo} alt="" />
+      <div className="absolute flex flex-col items-start gap-4 self-stretch m-8 w-[330px] sm:static sm:m-0 sm:w-fit">
         <svg
-          className="svgoffer"
+          className="w-12 h-12 sm:w-9 sm:h-9"
           xmlns="http://www.w3.org/2000/svg"
           width="48"
           height="48"
@@ -13,18 +12,22 @@ export default function Acadre01(params) {
           fill="none"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M41.46 14.24L41.18 13.74C40.8188 13.1354 40.3094 12.6329 39.7 12.28L26.28 4.54C25.6724 4.1875 24.9826 4.00124 24.28 4H23.7C22.9974 4.00124 22.3076 4.1875 21.7 4.54L8.28 12.3C7.67394 12.6505 7.17052 13.1539 6.82 13.76L6.54 14.26C6.1875 14.8677 6.00124 15.5575 6 16.26V31.76C6.00124 32.4626 6.1875 33.1524 6.54 33.76L6.82 34.26C7.17958 34.859 7.68098 35.3604 8.28 35.72L21.72 43.46C22.3246 43.8198 23.0164 44.0066 23.72 44H24.28C24.9826 43.9988 25.6724 43.8126 26.28 43.46L39.7 35.7C40.312 35.3574 40.8174 34.852 41.16 34.24L41.46 33.74C41.8082 33.1306 41.9942 32.442 42 31.74V16.24C41.9988 15.5375 41.8126 14.8477 41.46 14.24ZM23.7 8H24.28L36 14.76L24 21.68L12 14.76L23.7 8ZM26 39L37.7 32.24L38 31.74V18.22L26 25.16V39Z"
             fill="white"
           />
         </svg>
-        <div className="text01cadreoffer">{params.text01}</div>
-        <div className="text02cadreoffer">{params.text02}</div>
-        <button className="exporttextcadre">
-          <div className="exporttext">Explore</div>
+        <div className="text-white font-sans text-[40px] sm:text-[28px] font-medium leading-[130%] sm:leading-[120%] tracking-[-0.4px] sm:tracking-[-0.3px]">
+          {params.text01}
+        </div>
+        <div className="text-white font-sans text-text-regular sm:text-sm font-normal leading-[150%] sm:leading-[18px] w-full sm:w-fit">
+          {params.text02}
+        </div>
+        <button className="flex justify-center items-center gap-2 sm:gap-[6px] mt-2 sm:mt-[6px] h-12 sm:h-10 border-0 bg-transparent group/btn transition-all duration-500 hover:tracking-[3px]">
+          <div className="text-white">Explore</div>
           <svg
-            className="svg02"
+            className="w-6 h-6 sm:w-5 sm:h-5 mt-auto"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"

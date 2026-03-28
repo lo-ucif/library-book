@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./component/home";
 import Navbar from "./component/navbar";
 import Offer from "./component/offer";
@@ -14,11 +13,11 @@ import Finalpart from "./component/finalpart";
 
 function App() {
   return (
-    <div className="container">
-      <div id="home">
+    <div className="max-w-[1280px] mx-auto">
+      <div>
         <Navbar />
       </div>
-      <hr />
+      <hr className="border-t border-gray-200" />
       <div id="home">
         <Home />
       </div>

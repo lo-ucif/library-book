@@ -1,11 +1,12 @@
-import "./aquetioncadre-module.css";
 export default function Aquetioncadre(params) {
   return (
-    <div className="qcadre">
-      <div className="qp1">
-        <div className="qp11">{params.titleq}</div>
+    <div className="rounded-brand-large border border-brand-dark/15 bg-[#f2f2f2]">
+      <div className="flex p-5 px-6 items-center justify-between gap-6 self-stretch text-brand-dark">
+        <div className="text-brand-dark text-text-medium font-bold leading-[150%]">
+          {params.titleq}
+        </div>
         <svg
-          className="qp12"
+          className="relative w-6 h-6 shrink-0"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -19,7 +20,9 @@ export default function Aquetioncadre(params) {
           />
         </svg>
       </div>
-      <div className="qp2">{params.textq}</div>
+      <div className="flex p-6 pt-0 items-start gap-4 self-stretch text-brand-dark text-text-regular font-normal leading-[150%]">
+        {params.textq}
+      </div>
     </div>
   );
 }

@@ -1,9 +1,7 @@
-import { useEffect, useRef } from "react";
-import "./borrowbook-module.css";
+import { useEffect, useRef, useState } from "react";
 import Atitle from "./atitle";
 import Adoublebutton from "./adoublebutton";
 import Bookcadre from "./Bookcadre";
-import { useState } from "react";
 import plac01 from "../img/001001.jpg";
 import plac02 from "../img/2.jpg";
 import plac03 from "../img/image.png";
@@ -32,23 +30,22 @@ export default function Borrowbook() {
       desc: "How To English: 31 Days to be an independent learner (English Edition).",
     },
   ];
-  // الدالة المسؤولة عن تغيير المحتوى مع animation
+
   const changeContent = (index) => {
-    setAnimate(true); // بداية fade-out
+    setAnimate(true);
     setTimeout(() => {
-      setCurrentIndex(index); // تغيير المحتوى
-      setAnimate(false); // fade-in
-    }, 300); // مدة التلاشي
+      setCurrentIndex(index);
+      setAnimate(false);
+    }, 300);
   };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
         }
-        // else {
-        //   entry.target.classList.remove("animate"); // 🔁 reset
-        // }
       },
       { threshold: 0.1 }
     );
@@ -58,24 +55,32 @@ export default function Borrowbook() {
   }, []);
 
   return (
-    <div ref={borrowRef} className="borrowedbook">
-      <Atitle
-        text01="Loved"
-        text02="Most borrowed books"
-        text03="These are the books our readers keep coming back for. Trusted, tested, and treasured."
-      />
+    <div ref={borrowRef} className="flex flex-col items-center py-[112px] px-16 sm:p-5 gap-20 self-stretch group opacity-0 group-[.animate]:animate-fadeUp">
+      <div className="opacity-0 group-[.animate]:animate-fadeUp">
+        <Atitle
+          text01="Loved"
+          text02="Most borrowed books"
+          text03="These are the books our readers keep coming back for. Trusted, tested, and treasured."
+        />
+      </div>
 
-      <Adoublebutton buttext01="View" buttext02="Browse" />
-      <Bookcadre
-        book={books[currentIndex]}
-        dat01="This week"
-        dat02="This month"
-        dat03="This year"
-        animate={animate}
-        onWeek={() => changeContent(0)}
-        onMonth={() => changeContent(1)}
-        onYear={() => changeContent(2)}
-      />
+      <div className="opacity-0 group-[.animate]:animate-fadeUp [animation-delay:0.2s]">
+        <Adoublebutton buttext01="View" buttext02="Browse" />
+      </div>
+
+      <div className="w-full opacity-0 group-[.animate]:animate-fadeUp [animation-delay:0.4s]">
+        <Bookcadre
+          book={books[currentIndex]}
+          dat01="This week"
+          dat02="This month"
+          dat03="This year"
+          animate={animate}
+          active={currentIndex}
+          onWeek={() => changeContent(0)}
+          onMonth={() => changeContent(1)}
+          onYear={() => changeContent(2)}
+        />
+      </div>
     </div>
   );
 }

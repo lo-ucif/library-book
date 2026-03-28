@@ -1,64 +1,45 @@
-import "./Bookcadre-module.css";
 import Contentcadre from "./contentcadre";
-import { useState } from "react";
 
-export default function Bookcadre({
-  book,
-  dat01,
-  dat02,
-  dat03,
-  onWeek,
-  onMonth,
-  onYear,
-  animate,
-}) {
-
-  const [activeButton, setActiveButton] = useState(0);
-
-  const handleWeek = () => {
-    setActiveButton(0); 
-    onWeek(); 
-  };
-
-  const handleMonth = () => {
-    setActiveButton(1);
-    onMonth();
-  };
-
-  const handleYear = () => {
-    setActiveButton(2);
-    onYear();
-  };
-
+export default function Bookcadre(props) {
   return (
-    <div className="bookcadre">
-      <div className="threebut">
+    <div className="flex flex-wrap justify-center items-center gap-16 shrink-0">
+      <div className="flex justify-center items-center gap-6 font-sans">
         <button
-          className={`but3three ${activeButton === 0 ? "onclicked" : ""}`}
-          onClick={handleWeek}
+          onClick={props.onWeek}
+          className={`h-[45px] px-0 py-2 border-0 bg-transparent border-b-2 transition-colors ${
+            props.active === 0 ? "text-brand-brown border-brand-brown" : "border-transparent text-brand-dark"
+          }`}
         >
-          {dat01}
+          {props.dat01}
         </button>
         <button
-          className={`but3three ${activeButton === 1 ? "onclicked" : ""}`}
-          onClick={handleMonth}
+          onClick={props.onMonth}
+          className={`h-[45px] px-0 py-2 border-0 bg-transparent border-b-2 transition-colors ${
+            props.active === 1 ? "text-brand-brown border-brand-brown" : "border-transparent text-brand-dark"
+          }`}
         >
-          {dat02}
+          {props.dat02}
         </button>
         <button
-          className={`but3three ${activeButton === 2 ? "onclicked" : ""}`}
-          onClick={handleYear}
+          onClick={props.onYear}
+          className={`h-[45px] px-0 py-2 border-0 bg-transparent border-b-2 transition-colors ${
+            props.active === 2 ? "text-brand-brown border-brand-brown" : "border-transparent text-brand-dark"
+          }`}
         >
-          {dat03}
+          {props.dat03}
         </button>
       </div>
 
-      <div className={`content-wrapper ${animate ? "fade-out" : "fade-in"}`}>
+      <div
+        className={`transition-all duration-300 ${
+          props.animate ? "opacity-0 translate-y-10" : "opacity-100 translate-y-0"
+        }`}
+      >
         <Contentcadre
-          place01={book.img}
-          inf01={book.category}
-          inf02={book.title}
-          inf03={book.desc}
+          img={props.book.img}
+          category={props.book.category}
+          title={props.book.title}
+          desc={props.book.desc}
         />
       </div>
     </div>
