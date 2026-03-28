@@ -3,7 +3,7 @@ import logo from "../img/Boo__k library.svg";
 
 export default function Navbar() {
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div style={{ marginTop: "10px"}}>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <button
